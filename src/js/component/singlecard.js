@@ -1,7 +1,7 @@
 import React from "react";
 // import React, { Component } from "react";
 
-export const SingleCardCharacter = (props) => {
+const SingleCardCharacter = (props) => {
     const {name, description, gender, eye_color, hair_color } = useParams();
     console.log(params)
 
@@ -36,3 +36,5 @@ export const SingleCardCharacter = (props) => {
           </div>
   );
 };
+
+export default SingleCardCharacter
