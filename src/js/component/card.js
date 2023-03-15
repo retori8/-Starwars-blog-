@@ -1,8 +1,8 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
-// import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-export const Card = (props) => {
+const Card = (props) => {
     return (
         <div className="card bg-dark m-4 ms-5" style={{ width: "18rem" }}>
             <img style={{height:"30vh"}} src="..." className="card-img-top bg-white" alt="..." />
@@ -25,3 +25,5 @@ export const Card = (props) => {
         </div>
     )
 };
+
+export default Card
