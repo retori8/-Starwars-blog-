@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React  from "react";
 
 export const Footer = () => (
-	<div id="footer ">
+	<div className="card-footer" id="footer ">
     <nav className="navbar bg-dark fixed-bottom bg-body-tertiary">
       <div className="container-fluid ">
         <p className="text-light fs-6 w-100 text-center">

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500&family=JetBrains+Mono:wght@500&family=Roboto+Condensed:wght@400;700&display=swap'); */
+
+#titulo{
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 8%;
+    margin-top: 4%;
+    margin-bottom: 0%;
+}
+#card{
+    background-color: black;
+    border-color: rgb(69, 69, 67);
+}
+#card:hover{
+    box-shadow: 0px -5px 8px 0px rgba(255, 252, 252, 0.937)
+}
+.heart{
+    color: rgb(219, 162, 162);
+}
+
+

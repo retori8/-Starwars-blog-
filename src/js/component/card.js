@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
     return (
-        <div className="card bg-dark m-4 ms-5" style={{ width: "18rem" }}>
+        <div id ="card" className="card m-3" style={{ width: "18rem" }}>
             <img style={{height:"30vh"}} src="..." className="card-img-top bg-white" alt="..." />
             <div className="card-body text-light">
                 <h4 className="card-title">Card title</h4>
@@ -14,7 +14,7 @@ const Card = (props) => {
                 <h6 className="card-text ">Eye color: {props.eyeColor}</h6>
                 <hr/>
                 <div className="d-flex justify-content-between">
-                <Link to="/single/:theid" className="btn btn-outline-light">
+                <Link to="/single/:theid" className="btn btn-outline-light" id="lernMore">
                     Learn more!
                 </Link>
                 <button className="btn btn-outline-danger">
