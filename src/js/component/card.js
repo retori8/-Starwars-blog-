@@ -13,12 +13,7 @@ const Card = (props) => {
         alt="..."
       />
       <div className="card-body text-light">
-        <h4 className="card-title">{props?.title}</h4>
-        <hr />
-        <h6 className="card-text  ">Gender: {props?.gender}</h6>
-        <h6 className="card-text  ">Hair color: {props?.hair_color}</h6>
-        <h6 className="card-text ">Eye color: {props?.eye_color}</h6>
-        <hr />
+        {props.children}
         <div className="d-flex justify-content-between">
           <Link
             to="/single/:theid"
