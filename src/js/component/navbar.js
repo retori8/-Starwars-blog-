@@ -6,8 +6,8 @@ import Logo from "./logo.js";
 export const Navbar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary p-4" id="navbar">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary p-4" id="navbar">
+        <div className="container-fluid">
           <Link to="/">
             <span id="span" className="navbar-brand m-2 ms-5" width="30">
               <Logo />
@@ -15,34 +15,32 @@ export const Navbar = () => {
           </Link>
           <div className="ml-auto">
             <div className="ml-auto">
-              <Link to="/demo">
-                <button
-                  id="button"
-                  className="btn btn-lg align-middle dropdown-toggle m-2 me-5 ms-3 p-3"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                >
+              <button
+                id="button"
+                className="btn btn-lg align-middle dropdown-toggle m-2 me-5 ms-3 p-3"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
                 <FaHeart className="me-4" />
-                  FAVORITES
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <Link class="dropdown-item" to="/single/:theid">
-                      character1
-                    </Link>
-                  </li>
-                  <li>
-                    <Link class="dropdown-item" to="/single/:theid">
-                      character2
-                    </Link>
-                  </li>
-                  <li>
-                    <Link class="dropdown-item" to="/single/:theid">
-                      character3
-                    </Link>
-                  </li>
-                </ul>
-              </Link>
+                FAVORITES
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link className="dropdown-item" to="/single/:theid">
+                    character1
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/single/:theid">
+                    character2
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/single/:theid">
+                    character3
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
