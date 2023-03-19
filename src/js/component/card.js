@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Card = (props) => {
-  console.log(props);
+
+  const{actions} = useContext(Context)
+  
   return (
     <div id="card" className="card m-3" style={{ width: "18rem" }}>
       <img
@@ -16,13 +19,13 @@ const Card = (props) => {
         {props.children}
         <div className="d-flex justify-content-between">
           <Link
-            to="/single/:theid"
+            to={"/single/" + props.key}
             className="btn btn-outline-light"
             id="lernMore"
           >
             Learn more!
           </Link>
-          <button className="btn btn-outline-danger">
+          <button onClick={() => {actions.addFavorite(props.title)}} className="btn btn-outline-danger">
             <FaHeart />
           </button>
         </div>
