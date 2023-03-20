@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 const CardVehicles = (props) => {
 
-    const { actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
   return (
     <div className="card-body text-light">
@@ -17,15 +17,14 @@ const CardVehicles = (props) => {
       <hr />
       <div className="d-flex justify-content-between">
         <Link
-          to="/"
+          to={props.uid}
           className="btn btn-outline-light"
-          id={props?.key}
         >
           Learn more!
         </Link>
         <button
           onClick={() => {
-            actions.addFavorite(props.title);
+            actions.addFavorite(props?.key);
           }}
           className="btn btn-outline-danger"
         >

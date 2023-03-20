@@ -50,6 +50,7 @@ export const Home = () => {
                     population={planet?.properties?.population}
                     terrain={planet?.properties?.terrain}
                     key={planet?.uid}
+                    uid={`/planets/${planet?.uid}`}
                   />
                 </Card>
               );
@@ -72,6 +73,7 @@ export const Home = () => {
                     model={vehicle?.properties?.model}
                     passengers={vehicle?.properties?.passengers}
                     key={vehicle?.uid}
+                    uid={`/characters/${vehicle?.uid}`}
                   />
                 </Card>
               );

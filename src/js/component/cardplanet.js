@@ -5,10 +5,10 @@ import { Context } from "../store/appContext";
 
 const CardPlanets = (props) => {
     
-    const {actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
   return (
-    <div className="card-body text-light">
+    <div className="card-body text-light" id={props?.key}>
       <h4 className="card-title">{props?.title}</h4>
       <hr />
       <h6 className="card-text">Population: {props?.population}</h6>
@@ -16,15 +16,14 @@ const CardPlanets = (props) => {
       <hr />
       <div className="d-flex justify-content-between">
         <Link
-          to="/"
+          to={props.uid}
           className="btn btn-outline-light"
-          id={props?.key}
         >
           Learn more!
         </Link>
         <button
           onClick={() => {
-            actions.addFavorite(props.title);
+            actions.addFavorite(props?.key);
           }}
           className="btn btn-outline-danger"
         >
