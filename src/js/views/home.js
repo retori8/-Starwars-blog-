@@ -28,6 +28,7 @@ export const Home = () => {
                     hair_color={character?.properties?.hair_color}
                     eye_color={character?.properties?.eye_color}
                     key={character?.uid}
+                    uid={`/characters/${character?.uid}`}
                   />
                 </Card>
               );

@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       characters: null,
+	//   characterDetail: null,
       planets: null,
       vehicles: null,
 	  favorite: [],
@@ -15,20 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               "Content-Type": "application/json",
             },
           });
-          // console.log("response", response);
           if (response.status === 404) throw Error("Page not found");
           const characters_info = await response.json();
-          /* characters_info.results.forEach(async ({ url }, i) => {
-					try {
-					  const resp = await fetch(url);
-					  const data = await resp.json();
-					  
-					  characters_info.results[i].properties = data?.result?.properties;
-					
-					} catch (error) {
-					  console.log(error.message);
-					}
-				  }); */
           for (let i = 0; i < characters_info.results.length; i++) {
             const resp = await fetch(characters_info.results[i].url);
             const data = await resp.json();
@@ -44,6 +33,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error.message);
         }
       },
+	//   getCharacterdetail: async () => {
+    //     try {
+    //       const response = await fetch(`https://www.swapi.tech/api/people/${id}`, {
+    //         metod: "GET",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //       });
+    //       const characters_detail = await response.json();
+    //       setStore({
+    //         characterDetail: characters_detail,
+    //       });
+    //     } catch (error) {
+    //       console.log(error.message);
+    //     }
+    //   },
 	  getPlanets: async () => {
 		try {
 		  const response = await fetch("https://www.swapi.tech/api/planets/", {

@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = (props) => {
-  const { store, actions } = useContext(Context);
+export const Character = () => {
+  const { store } = useContext(Context);
   const {uid} = useParams();
+
   return (
     <>
         <div id="singlecard" className="card w-75 mb-3 position-absolute top-50 start-50 translate-middle text-light">
@@ -15,11 +16,9 @@ export const Single = (props) => {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
+                <h5 className="card-title">{store.characters?.results?.uid}</h5>
                 <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                {store.characters?.results?.description}
                 </p>
                 <p className="card-text">
                   <small className="text-muted">Last updated 3 mins ago</small>
@@ -44,6 +43,6 @@ export const Single = (props) => {
   );
 };
 
-Single.propTypes = {
+Character.propTypes = {
   match: PropTypes.object,
 };

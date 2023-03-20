@@ -17,9 +17,9 @@ const CardVehicles = (props) => {
       <hr />
       <div className="d-flex justify-content-between">
         <Link
-          to={"/single/" + { ...props?.uid }}
+          to="/"
           className="btn btn-outline-light"
-          id="lernMore"
+          id={props?.key}
         >
           Learn more!
         </Link>
