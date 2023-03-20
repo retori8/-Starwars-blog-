@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import "../../styles/home.css";
 import Card from "../component/card";
 import CardCharacters from "../component/cardcharacter";
-import CardPlanets from "../component/cardplanets";
-import CardVehicles from "../component/cardvehicles";
+import CardPlanets from "../component/cardplanet";
+import CardVehicles from "../component/cardvehicle";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
-  
+
   const { store, actions } = useContext(Context);
 
   return (
