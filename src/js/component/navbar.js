@@ -38,7 +38,7 @@ export const Navbar = () => {
                     favorite.length > 0 &&
                     favorite.map((fav, i) => {
                       return (
-                        <Favorites fav={fav} key={i} />
+                        <Favorites fav={fav} key={i} i={i}/>
                       );
                     })}
                   {/* <li>

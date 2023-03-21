@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	//   characterDetail: null,
       planets: null,
       vehicles: null,
-	  favorite: [],
+	    favorite: [],
+      deleteTask: null
     },
     actions: {
       getCharacters: async () => {
@@ -96,12 +97,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 		}
 	  },
 
-      addFavorite(fav) {
+    addFavorite(fav) {
         console.log(fav);
         const { favorite } = getStore();
         let listafav = [...favorite, fav];
         setStore({ favorite: listafav });
-      }
+    },
+    handleDelete(i) {
+      const deleteTask = [...list];
+      deleteTask.splice(i, 1);
+      setStore({deleteTask: deleteTask});
+      // updateTaskList(deleteTask);
+    }
     },
   };
 };
