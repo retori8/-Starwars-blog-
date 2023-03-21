@@ -34,11 +34,13 @@ export const Navbar = () => {
                   FAVORITES
                 </button>
                 <ul className="dropdown-menu">
+                  
                   {!!favorite &&
                     favorite.length > 0 &&
-                    favorite.map((fav, i) => {
+                    favorite.map((fav, index) => {
+                      console.log(favorite)
                       return (
-                        <Favorites fav={fav} key={i} i={i}/>
+                        <Favorites fav={fav} i={index}/>
                       );
                     })}
                   {/* <li>

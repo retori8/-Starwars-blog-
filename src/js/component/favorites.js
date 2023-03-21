@@ -1,11 +1,9 @@
-import propTypes from "prop-types";
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Favorites = (props) => {
-  const { store, actions } = useContext(Context);
-  const { favorite } = store;
+  const { actions } = useContext(Context);
 
   return (
     <li id="li" className="list-group-item d-flex justify-content-between align-items-start">
