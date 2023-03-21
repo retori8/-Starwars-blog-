@@ -23,7 +23,7 @@ const CardPlanets = (props) => {
         </Link>
         <button
           onClick={() => {
-            actions.addFavorite(props?.key);
+            actions.addFavorite(props?.title);
           }}
           className="btn btn-outline-danger"
         >

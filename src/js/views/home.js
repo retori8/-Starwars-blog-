@@ -73,7 +73,7 @@ export const Home = () => {
                     model={vehicle?.properties?.model}
                     passengers={vehicle?.properties?.passengers}
                     key={vehicle?.uid}
-                    uid={`/characters/${vehicle?.uid}`}
+                    uid={`/vehicle/${vehicle?.uid}`}
                   />
                 </Card>
               );
