@@ -4,7 +4,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       characters: null,
 	//   characterDetail: null,
       planets: null,
-      vehicles: null,
 	    favorite:[],
       deleteTask: null
     },
@@ -73,29 +72,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  console.log(error.message);
 		}
 	},
-	getVehicles: async () => {
-		try {
-		  const response = await fetch("https://www.swapi.tech/api/vehicles/", {
-			metod: "GET",
-			headers: {
-			  "Content-Type": "application/json",
-			},
-		  });
-		  if (response.status === 404) throw Error("Page not found");
-		  const vehicles_info = await response.json();
-		  for (let i = 0; i < vehicles_info.results.length; i++) {
-			const resp = await fetch(vehicles_info.results[i].url);
-			const data = await resp.json();
-	
-			vehicles_info.results[i].properties = data?.result?.properties;
-		  }
-		  setStore({
-            vehicles: vehicles_info,
-          });
-		} catch (error) {
-		  console.log(error.message);
-		}
-	  },
 
     addFavorite(fav) {
         const { favorite } = getStore();

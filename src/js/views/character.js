@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 
 export const Character = () => {
   const { store } = useContext(Context);
+  const { characters } = useContext(Context);
   const {uid} = useParams();
 
   return (
@@ -16,7 +17,7 @@ export const Character = () => {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-title">{store.characters?.results?.uid}</h5>
+                <h5 className="card-title text-danger">hola</h5>
                 <p className="card-text">
                 {store.characters?.results?.description}
                 </p>

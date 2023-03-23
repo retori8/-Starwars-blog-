@@ -3,12 +3,13 @@ import "../../styles/home.css";
 import Card from "../component/card";
 import CardCharacters from "../component/cardcharacter";
 import CardPlanets from "../component/cardplanet";
-import CardVehicles from "../component/cardvehicle";
+
 import { Context } from "../store/appContext";
 
 export const Home = () => {
 
   const { store, actions } = useContext(Context);
+  console.log("characters", store.characters)
 
   return (
     <>
@@ -51,29 +52,6 @@ export const Home = () => {
                     terrain={planet?.properties?.terrain}
                     key={planet?.uid}
                     uid={`/planets/${planet?.uid}`}
-                  />
-                </Card>
-              );
-            })}
-        </div>
-      </div>
-      <p id="titulo" className="fs-1 text-white">
-        VEHICLES
-      </p>
-      <div className="containet d-flex justify-content-center">
-        <div className="row justify-content-center row-col-2 mt-5 g-2">
-          {!!store.vehicles &&
-            store.vehicles?.results?.length > 0 &&
-            store.vehicles?.results?.map((vehicle, i) => {
-              return (
-                <Card>
-                  <CardVehicles
-                    title={vehicle?.name}
-                    manufacturer={vehicle?.properties?.manufacturer}
-                    model={vehicle?.properties?.model}
-                    passengers={vehicle?.properties?.passengers}
-                    key={vehicle?.uid}
-                    uid={`/vehicle/${vehicle?.uid}`}
                   />
                 </Card>
               );
