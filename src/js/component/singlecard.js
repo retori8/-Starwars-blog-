@@ -1,40 +1,42 @@
 import React from "react";
-// import React, { Component } from "react";
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
-const SingleCardCharacter = (props) => {
-    const {name, description, gender, eye_color, hair_color } = useParams();
-    console.log(params)
+
+export const SingleCardCharacter = () => {
+    const { store } = useContext(Context);
+    const {uid} = useParams();
+    const position = parseInt(uid) -1;
+    console.log(uid)
 
   return (
-          <div className="card bg-dark m-3 mb-4" style={{ maxWidth: 540 }}>
+          <div className="cardetail card bg-dark">
             <div className="row g-0">
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <img
                   style={{ height: "60vh" }}
-                  src="..."
+                  src="../../../dist/img/1.jpeg"
                   className="img-fluid rounded-start bg-white"
                   alt="..."
                 />
               </div>
-              <div className="col-md-8">
+              <div className="col-md-6">
                 <div className="card-body text-light">
-                  <h4 className="card-title">Name Character</h4>
-                  <p className="card-text">
-                    Description ranodom this is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
+                  <h1 className="card-title">{store.characters?.results[position]?.name}</h1>
                   <hr />
+                  <h5 className="card-text"> Height :{store.characters?.results[position]?.properties?.height}</h5>
+                  <h5 className="card-text"> Mass :{store.characters?.results[position]?.properties?.mass}</h5>
+                  <h5 className="card-text"> Hair color :{store.characters?.results[position]?.properties?.hair_color}</h5>
+                  <h5 className="card-text"> Skin color :{store.characters?.results[position]?.properties?.skin_color}</h5>
+                  <h5 className="card-text"> Eye color :{store.characters?.results[position]?.properties?.eye_color}</h5>
+                  <h5 className="card-text"> Birth year :{store.characters?.results[position]?.properties?.birth_year}</h5>
+                  <h5 className="card-text"> Gender :{store.characters?.results[position]?.properties?.gender}</h5>
                 </div>
-              </div>
-              <div className="d-flex justify-content-between m-3 text-light">
-                <h6 className="card-text  ">Gender: single {gender}</h6>
-                <h6 className="card-text  ">Hair color: {props.hairColor}</h6>
-                <h6 className="card-text ">Eye color: {props.eyeColor}</h6>
               </div>
             </div>
           </div>
   );
 };
 
-export default SingleCardCharacter
+
