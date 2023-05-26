@@ -16,7 +16,7 @@ export const SingleCardCharacter = () => {
               <div className="col-md-6">
                 <img
                   style={{ height: "60vh" }}
-                  src="../../../dist/img/1.jpeg"
+                  src={store.img_character[position]}
                   className="img-fluid rounded-start bg-white"
                   alt="..."
                 />

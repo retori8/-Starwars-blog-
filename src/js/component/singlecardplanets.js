@@ -15,7 +15,7 @@ export const SingleCardPlanets = () => {
               <div className="col-md-6">
                 <img
                   style={{ height: "60vh" }}
-                  src="https://www.consumer.es/app/uploads/2004/05/flor-de-loto-e1653918982491.jpg"
+                  src={store.img_planet[position]}
                   className="img-fluid rounded-start bg-white"
                   alt="..."
                 />
