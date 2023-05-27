@@ -9,7 +9,6 @@ import { Context } from "../store/appContext";
 export const Home = () => {
 
   const { store, actions } = useContext(Context);
-  console.log("characters", store.characters)
 
   return (
     <>
@@ -22,7 +21,7 @@ export const Home = () => {
             store.characters?.results?.length > 0 &&
             store.characters?.results?.map((character, i) => {
               return (
-                <Card>
+                <Card img={store.img_character[character?.uid -1]} >
                   <CardCharacters
                     title={character?.name}
                     gender={character?.properties?.gender}
@@ -45,7 +44,7 @@ export const Home = () => {
             store.planets?.results?.length > 0 &&
             store.planets?.results?.map((planet, i) => {
               return (
-                <Card>
+                <Card img={store.img_planet[planet?.uid -1]}>
                   <CardPlanets
                     title={planet?.name}
                     population={planet?.properties?.population}
@@ -58,6 +57,8 @@ export const Home = () => {
             })}
         </div>
       </div>
+      <br/>
+      <br/>
     </>
   );
 };

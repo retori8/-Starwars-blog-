@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const CardCharacters = (props) => {
-  
   const { store, actions } = useContext(Context);
 
   return (
@@ -16,10 +15,7 @@ const CardCharacters = (props) => {
       <h6 className="card-text ">Eye color: {props?.eye_color}</h6>
       <hr />
       <div className="d-flex justify-content-between">
-        <Link
-          to={props.uid}
-          className="btn btn-outline-light"
-        >
+        <Link to={props.uid} className="btn btn-outline-light">
           Learn more!
         </Link>
         <button
